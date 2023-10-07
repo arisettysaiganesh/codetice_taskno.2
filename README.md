@@ -1,6 +1,4 @@
 
-
-```markdown
 # SGmusicplayer
 
 SGmusicplayer is a simple command-line music player designed for playing songs and finding songs online. It provides a user-friendly interface for music enthusiasts to enjoy their favorite tunes.
