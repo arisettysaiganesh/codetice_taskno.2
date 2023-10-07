@@ -1,5 +1,6 @@
-# PiePlayer (c) ArtGames101 2018
-import pygame, sys, os, time
+import pygame
+import os
+import time
 import random
 import config
 
@@ -12,21 +13,30 @@ def clear_screen():
     else:
         os.system("clear")
 
-def songloop():
-    print("Playing a random song... [{}]".format(time.ctime()))
+def play_random_song():
     pygame.mixer.init()
-    try:
-        pygame.mixer.music.load("songs/{}".format(random.choice(config.songs)))
-        pygame.mixer.music.play()
-    except:
+    while True:
         clear_screen()
-        input("Unable to play/load a song!")
-        songloop()
-    while pygame.mixer.music.get_busy() == True:
-        continue
-    songloop()
+        print("Song Log:\n")
+        print("CTRL + C to Exit")
+        try:
+            song_file = random.choice(config.songs)
+            print("Playing a random song... [{}]".format(time.ctime()))
+            pygame.mixer.music.load("songs/{}".format(song_file))
+            pygame.mixer.music.play()
+            while pygame.mixer.music.get_busy():
+                continue
+        except KeyboardInterrupt:
+            clear_screen()
+            print("Exiting the Song Player...")
+            break
+        except Exception as e:
+            clear_screen()
+            print("Error: Unable to play/load a song!")
+            print("Error Details:", str(e))
+            input("Press Enter to continue...")
 
-clear_screen()
-print("Song Log:\n")
-print("CTRL + C Exit")
-songloop()
+if __name__ == "__main__":
+    clear_screen()
+    print("Welcome to the SG Random Song Player!\n")
+    play_random_song()
