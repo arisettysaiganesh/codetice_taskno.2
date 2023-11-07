@@ -60,7 +60,10 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Author
 
-- Arisetty Sai Ganesh
+This plagiarism checker was developed by **Arisetty Sai Ganesh**.
+
+- GitHub: [Arisetty Sai Ganesh](https://github.com/arisettysaiganesh/)
+- LinkedIn: [Arisetty Sai Ganesh](https://www.linkedin.com/in/sai-ganesh-arisetty-7221b4214/)
 
 ## Acknowledgments
 
